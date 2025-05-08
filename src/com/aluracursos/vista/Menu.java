@@ -1,4 +1,4 @@
-package com.aluracursos.principal;
+package com.aluracursos.vista;
 
 import com.aluracursos.conversor.servicio.ConversorService;
 
