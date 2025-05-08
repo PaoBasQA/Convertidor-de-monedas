@@ -25,14 +25,6 @@ public class ConversorService {
         HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
         conexion.setRequestMethod("GET");
 
-        BufferedReader reader = new BufferedReader(new InputStreamReader(conexion.getInputStream()));
-        StringBuilder respuesta = new StringBuilder();
-        String linea;
-        while ((linea = reader.readLine()) != null) {
-            respuesta.append(linea);
-        }
-        reader.close();
-
         JsonObject json = JsonParser.parseString(respuesta.toString()).getAsJsonObject();
 
         // Validar que el campo exista
@@ -42,5 +34,22 @@ public class ConversorService {
 
         return json.getAsJsonObject("conversion_rates").get(monedaDestino).getAsDouble();
     }
-}
 
+    public void convertir(String monedaOrigen, String monedaDestino) {
+        String urlStr = "https://v6.exchangerate-api.com/v6/" + apiKey + "/latest/" + monedaOrigen;
+        try {
+            URL url = new URL(urlStr);
+            HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
+            conexion.setRequestMethod("GET");
+
+            BufferedReader reader = new BufferedReader(new InputStreamReader(conexion.getInputStream()));
+            StringBuilder respuesta = new StringBuilder();
+            String linea;
+
+            while ((linea = reader.readLine()) != null) {
+                respuesta.append(linea);
+            }
+            reader.close();
+        }
+    }
+}
