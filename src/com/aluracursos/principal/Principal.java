@@ -7,8 +7,8 @@ public class Principal {
         System.out.println("*****************************************");
         System.out.println("** Bienvenidos al Conversor de Monedas **");
         System.out.println("*****************************************");
-       // Menu menu = new Menu();
-       // menu.showMenu();
+        Menu menu = new Menu();
+        menu.mostrarMenu();
 
 
         // Crear un objeto JSON simulando datos de conversión de moneda
