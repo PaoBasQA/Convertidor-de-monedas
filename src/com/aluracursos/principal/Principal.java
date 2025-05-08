@@ -4,6 +4,12 @@ import com.google.gson.JsonObject;
 
 public class Principal {
     public static void main(String[] args) {
+        System.out.println("*****************************************");
+        System.out.println("** Bienvenidos al Conversor de Monedas **");
+        System.out.println("*****************************************");
+       // Menu menu = new Menu();
+       // menu.showMenu();
+
 
         // Crear un objeto JSON simulando datos de conversión de moneda
         JsonObject moneda = new JsonObject();
