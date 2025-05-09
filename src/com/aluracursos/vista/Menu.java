@@ -1,12 +1,12 @@
 package com.aluracursos.vista;
 
-import com.aluracursos.conversor.servicio.ConversorService;
+import com.aluracursos.modelo.ClienteServidor;
 
 import java.util.Scanner;
 
 public class Menu {
     private final Scanner teclado = new Scanner(System.in);
-    private final ConversorService conversor = new ConversorService();
+    private final ClienteServidor conversor = new ClienteServidor();
 
     public void mostrarMenu() {
         int opcion = -1;
