@@ -24,15 +24,25 @@ public class Menu {
             opcion = teclado.nextInt();
             teclado.nextLine();  // Limpieza de buffer
 
-            switch (opcion) {
-                case 1 -> conversor.convertir("USD", "ARS");
-                case 2 -> conversor.convertir("ARS", "USD");
-                case 3 -> conversor.convertir("USD", "BRL");
-                case 4 -> conversor.convertir("BRL", "USD");
-                case 5 -> conversor.convertir("USD", "COP");
-                case 6 -> conversor.convertir("COP", "USD");
-                case 7 -> System.out.println("👋 ¡Gracias por usar el conversor!");
-                default -> System.out.println("❌ Opción inválida. Intente nuevamente.");
+            if (opcion >= 1 && opcion <= 6) {
+                System.out.println("💰 Ingrese el monto a convertir: ");
+                double monto = teclado.nextDouble();
+                teclado.nextLine(); //Limpia el Buffer
+
+                switch (opcion) {
+                    case 1 -> conversor.convertir("USD", "ARS");
+                    case 2 -> conversor.convertir("ARS", "USD");
+                    case 3 -> conversor.convertir("USD", "BRL");
+                    case 4 -> conversor.convertir("BRL", "USD");
+                    case 5 -> conversor.convertir("USD", "COP");
+                    case 6 -> conversor.convertir("COP", "USD");
+                    case 7 -> System.out.println("👋 ¡Gracias por usar el conversor!");
+                    default -> System.out.println("❌ Opción inválida. Intente nuevamente.");
+                }
+            } else if (opcion == 7) {
+                System.out.println("👋 ¡Gracias por usar el conversor!");
+            } else {
+                System.out.println("❌ Opción inválida. Intente nuevamente.");
             }
         }
     }
