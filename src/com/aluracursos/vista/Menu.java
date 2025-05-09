@@ -30,12 +30,12 @@ public class Menu {
                 teclado.nextLine(); //Limpia el Buffer
 
                 switch (opcion) {
-                    case 1 -> conversor.convertir("USD", "ARS");
-                    case 2 -> conversor.convertir("ARS", "USD");
-                    case 3 -> conversor.convertir("USD", "BRL");
-                    case 4 -> conversor.convertir("BRL", "USD");
-                    case 5 -> conversor.convertir("USD", "COP");
-                    case 6 -> conversor.convertir("COP", "USD");
+                    case 1 -> conversor.convertir("USD", "ARS", monto);
+                    case 2 -> conversor.convertir("ARS", "USD", monto);
+                    case 3 -> conversor.convertir("USD", "BRL", monto);
+                    case 4 -> conversor.convertir("BRL", "USD", monto);
+                    case 5 -> conversor.convertir("USD", "COP", monto);
+                    case 6 -> conversor.convertir("COP", "USD", monto);
                     case 7 -> System.out.println("👋 ¡Gracias por usar el conversor!");
                     default -> System.out.println("❌ Opción inválida. Intente nuevamente.");
                 }
