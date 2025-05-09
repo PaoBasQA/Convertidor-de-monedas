@@ -8,14 +8,12 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.util.HashMap;
-import java.util.Map;
 
 public class ClienteServidor {
     private static final String API_URL = "https://v6.exchangerate-api.com/v6/e20a4a101bc207bf6b344197/latest/";
     private final Gson gson = new Gson();
 
-    public void convertir(String monedaOrigen, String monedaDestino) {
+    public void convertir(String monedaOrigen, String monedaDestino, double monto) {
         try {
             HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder()
@@ -39,6 +37,7 @@ public class ClienteServidor {
             }
 
             double tasa = tasas.get(monedaDestino).getAsDouble();
+            double resultado = monto * tasa;
 
             System.out.printf("💱 1 %s = %.2f %s%n", monedaOrigen, tasa, monedaDestino);
 
