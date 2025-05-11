@@ -1,9 +1,8 @@
 package com.aluracursos.conversor.vista;
 
 import com.aluracursos.conversor.controlador.MonedaService;
+import com.aluracursos.conversor.modelo.FormatoMonedaUtil;
 import com.aluracursos.conversor.modelo.Moneda;
-import java.text.NumberFormat;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Menu {
@@ -51,10 +50,9 @@ public class Menu {
 
                     Moneda moneda = monedaService.convertir(origen, destino, monto);
 
-                    NumberFormat formatoLatino = NumberFormat.getNumberInstance(new Locale("es", "AR"));
-                    String montoOriginal = formatoLatino.format(moneda.getMontoOriginal());
-                    String tasa = formatoLatino.format(moneda.getTasa());
-                    String resultado = formatoLatino.format(moneda.getMontoConvertido());
+                    String montoOriginal = FormatoMonedaUtil.formatear(moneda.getMontoOriginal());
+                    String tasa = FormatoMonedaUtil.formatear(moneda.getTasa());
+                    String resultado = FormatoMonedaUtil.formatear(moneda.getMontoConvertido());
 
                     System.out.println("💱 1 " + origen + " = " + tasa + " " + destino);
                     System.out.println("💱 " + montoOriginal + " " + origen + " = " + resultado + " " + destino);
