@@ -1,6 +1,7 @@
 package com.aluracursos.conversor.vista;
 
 import com.aluracursos.conversor.controlador.MonedaService;
+import com.aluracursos.conversor.modelo.CodigoMoneda;
 import com.aluracursos.conversor.modelo.FormatoMonedaUtil;
 import com.aluracursos.conversor.modelo.Moneda;
 import java.util.Scanner;
@@ -38,14 +39,14 @@ public class Menu {
                     String entrada = teclado.nextLine().replace(".", "").replace(",", ".");
                     double monto = Double.parseDouble(entrada);
 
-                    String origen = "", destino = "";
+                    CodigoMoneda origen = null, destino = null;
                     switch (opcion) {
-                        case 1 -> { origen = "USD"; destino = "ARS"; }
-                        case 2 -> { origen = "ARS"; destino = "USD"; }
-                        case 3 -> { origen = "USD"; destino = "BRL"; }
-                        case 4 -> { origen = "BRL"; destino = "USD"; }
-                        case 5 -> { origen = "USD"; destino = "COP"; }
-                        case 6 -> { origen = "COP"; destino = "USD"; }
+                        case 1 -> { origen = CodigoMoneda.USD; destino = CodigoMoneda.ARS; }
+                        case 2 -> { origen = CodigoMoneda.ARS; destino = CodigoMoneda.USD; }
+                        case 3 -> { origen = CodigoMoneda.USD; destino = CodigoMoneda.BRL; }
+                        case 4 -> { origen = CodigoMoneda.BRL; destino = CodigoMoneda.USD; }
+                        case 5 -> { origen = CodigoMoneda.USD; destino = CodigoMoneda.COP; }
+                        case 6 -> { origen = CodigoMoneda.COP; destino = CodigoMoneda.USD; }
                     }
 
                     Moneda moneda = monedaService.convertir(origen, destino, monto);
