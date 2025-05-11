@@ -2,7 +2,6 @@ package com.aluracursos.conversor.vista;
 
 import com.aluracursos.conversor.controlador.MonedaService;
 import com.aluracursos.conversor.modelo.Moneda;
-
 import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.Scanner;

@@ -2,7 +2,6 @@ package com.aluracursos.conversor.modelo;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
-
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
