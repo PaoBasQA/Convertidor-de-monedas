@@ -16,8 +16,15 @@ public class RegistroConversion {
         return moneda;
     }
 
+    public LocalDateTime getFechaHora() {
+        return fechaHora; // Agregamos este getter para acceder a la fecha sin formato
+    }
+
     public String getFechaHoraFormateada() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-        return fechaHora.format(formatter);
+        return fechaHora.format(formatter); // Este método sigue existiendo para obtener la fecha formateada
+    }
+
+    public void setFechaHora(LocalDateTime fechaHora) {
     }
 }

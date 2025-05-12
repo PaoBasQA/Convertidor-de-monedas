@@ -1,0 +1,62 @@
+[
+  {
+    "moneda": {
+      "origen": "USD",
+      "destino": "ARS",
+      "montoOriginal": 35000.0,
+      "tasa": 1113.58,
+      "montoConvertido": 3.89753E7
+    },
+    "fechaHora": "2025-05-12T18:59:29.0879263"
+  },
+  {
+    "moneda": {
+      "origen": "ARS",
+      "destino": "USD",
+      "montoOriginal": 3.89753E7,
+      "tasa": 8.98E-4,
+      "montoConvertido": 34999.8194
+    },
+    "fechaHora": "2025-05-12T18:59:48.9206765"
+  },
+  {
+    "moneda": {
+      "origen": "USD",
+      "destino": "BRL",
+      "montoOriginal": 2500.0,
+      "tasa": 5.651,
+      "montoConvertido": 14127.5
+    },
+    "fechaHora": "2025-05-12T19:00:04.07806"
+  },
+  {
+    "moneda": {
+      "origen": "BRL",
+      "destino": "USD",
+      "montoOriginal": 14127.5,
+      "tasa": 0.177,
+      "montoConvertido": 2500.5674999999997
+    },
+    "fechaHora": "2025-05-12T19:00:24.4207513"
+  },
+  {
+    "moneda": {
+      "origen": "USD",
+      "destino": "COP",
+      "montoOriginal": 3200.0,
+      "tasa": 4229.3446,
+      "montoConvertido": 1.353390272E7
+    },
+    "fechaHora": "2025-05-12T19:00:44.719019"
+  },
+  {
+    "moneda": {
+      "origen": "COP",
+      "destino": "USD",
+      "montoOriginal": 1.353390272E7,
+      "tasa": 2.3645E-4,
+      "montoConvertido": 3200.091298144
+    },
+    "fechaHora": "2025-05-12T19:01:02.7785738"
+  }
+]

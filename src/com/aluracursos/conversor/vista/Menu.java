@@ -1,19 +1,24 @@
 package com.aluracursos.conversor.vista;
 
+import com.aluracursos.conversor.controlador.HistorialConversionService;
 import com.aluracursos.conversor.controlador.MonedaService;
 import com.aluracursos.conversor.modelo.CodigoMoneda;
 import com.aluracursos.conversor.modelo.FormatoMonedaUtil;
 import com.aluracursos.conversor.modelo.Moneda;
 import com.aluracursos.conversor.modelo.RegistroConversion;
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Menu {
     private final Scanner teclado = new Scanner(System.in);
     private final MonedaService monedaService = new MonedaService();
-    private final List<RegistroConversion> historial = new ArrayList<>();
+    private final HistorialConversionService historialService = new HistorialConversionService();
+    private List<RegistroConversion> historial;
+
+    public Menu() {
+        // Cargar historial desde el archivo al inicio
+        this.historial = historialService.cargarHistorial();
+    }
 
     public void mostrarMenu() {
         int opcion = -1;
@@ -64,7 +69,12 @@ public class Menu {
                     System.out.println("💱 1 " + origen + " = " + tasa + " " + destino);
                     System.out.println("💱 " + montoOriginal + " " + origen + " = " + resultado + " " + destino);
 
-                    historial.add(new RegistroConversion(moneda));
+                    // Agregar el nuevo registro de conversión al historial
+                    RegistroConversion registro = new RegistroConversion(moneda);
+                    historial.add(registro);
+
+                    // Guardar el historial actualizado en el archivo
+                    historialService.guardarHistorial(historial);
 
                 } catch (NumberFormatException e) {
                     System.out.println("❌ Monto inválido. Asegúrese de ingresar un número.");
