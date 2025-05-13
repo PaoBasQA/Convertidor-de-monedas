@@ -80,7 +80,7 @@ El historial de conversiones se guarda automáticamente en un archivo `historial
 
 ## Autora
 
-* 💻 Paola — Estudiante de programación y testing
+* 💻 Paola — Estudiante de programación Back-End: Java en Alura Latam - Oracle | G8
 
 ---
 
