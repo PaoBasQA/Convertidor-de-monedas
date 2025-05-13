@@ -1,5 +1,6 @@
 package com.aluracursos.conversor.modelo;
 
+import com.aluracursos.conversor.config.Config; // asegurate de importar esto
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import java.net.URI;
@@ -8,7 +9,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class ClienteServidor {
-    private static final String API_KEY = "e20a4a101bc207bf6b344197"; // Coloca tu clave real aquí
+    private static final String API_KEY = Config.getApiKey();  // acá está el cambio
     private static final String API_URL = "https://v6.exchangerate-api.com/v6/" + API_KEY + "/latest/";
     private final Gson gson = new Gson();
 
