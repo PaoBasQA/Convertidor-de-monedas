@@ -84,7 +84,13 @@ El historial de conversiones se guarda automáticamente en un archivo `historial
 
 ---
 
-📌 **Nota**: El archivo `.env` está incluido en `.gitignore`, por lo tanto no se subirá al repositorio por seguridad.
+📌 **Nota importante**: El archivo `.env` contiene la clave secreta de la API y no debe subirse al repositorio.
+Ya fue eliminado del historial de commits y está correctamente ignorado mediante `.gitignore`.
+
+---
+## Seguridad
+
+Este proyecto utiliza un archivo `.env` para mantener la clave API segura y fuera del control de versiones. Se recomienda no compartir este archivo y revocar cualquier clave que haya sido expuesta accidentalmente.
 
 ---
 
